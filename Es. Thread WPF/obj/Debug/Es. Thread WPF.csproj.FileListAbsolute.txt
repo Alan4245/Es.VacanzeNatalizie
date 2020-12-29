@@ -1,0 +1,15 @@
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\bin\Debug\Es.Thread_WPF.exe.config
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\bin\Debug\Es.Thread_WPF.exe
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\bin\Debug\Es.Thread_WPF.pdb
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es. Thread WPF.csprojAssemblyReference.cache
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\MainWindow.g.cs
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\App.g.cs
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es.Thread_WPF_MarkupCompile.cache
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es.Thread_WPF_MarkupCompile.lref
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\MainWindow.baml
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es.Thread_WPF.g.resources
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es.Thread_WPF.Properties.Resources.resources
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es. Thread WPF.csproj.GenerateResource.cache
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es. Thread WPF.csproj.CoreCompileInputs.cache
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es.Thread_WPF.exe
+C:\Users\alanm\Documents\GitHubProgetti\Es. Thread WPF\Es. Thread WPF\obj\Debug\Es.Thread_WPF.pdb

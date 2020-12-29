@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace Es.Thread_WPF
 {
@@ -24,5 +25,8 @@ namespace Es.Thread_WPF
         {
             InitializeComponent();
         }
+
+
+
     }
 }
