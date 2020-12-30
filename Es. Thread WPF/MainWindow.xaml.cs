@@ -21,9 +21,14 @@ namespace Es.Thread_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        readonly Uri uriAuto = new Uri("car.png", UriKind.Relative);
+       // int posInitAuto = 100;
         public MainWindow()
         {
             InitializeComponent();
+            ImageSource img = new BitmapImage(uriAuto);
+            imgCar.Source = img;
         }
 
 

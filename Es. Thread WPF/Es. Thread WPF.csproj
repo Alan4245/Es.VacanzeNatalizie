@@ -97,5 +97,20 @@
   <ItemGroup>
     <Resource Include="sfondo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lampOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lampOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="initPoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="endPoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="car.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
