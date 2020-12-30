@@ -92,7 +92,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                Thread.Sleep(TimeSpan.FromMilliseconds(50));
+                Thread.Sleep(TimeSpan.FromMilliseconds(30));
             }
 
             if(caricamento > 1000)
@@ -119,7 +119,7 @@ namespace Es.Thread_WPF
                 {
                     pbThread2.Value = statoCaricamento;
                 }));
-                Thread.Sleep(TimeSpan.FromMilliseconds(50));
+                Thread.Sleep(TimeSpan.FromMilliseconds(30));
             } while (statoCaricamento < 1000);
 
             if(statoCaricamento >= 1000)
@@ -136,7 +136,7 @@ namespace Es.Thread_WPF
             {
                 posInitAuto += 1.29;
 
-                Thread.Sleep(TimeSpan.FromMilliseconds(50));
+                Thread.Sleep(TimeSpan.FromMilliseconds(30));
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
