@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Threading;
 
 namespace Es.Thread_WPF
@@ -26,8 +16,8 @@ namespace Es.Thread_WPF
     {
 
         readonly Uri uriAuto = new Uri("car.png", UriKind.Relative);
-        double posInitAuto = 35;
-        int classifica = 0;
+        double posInitAuto;
+        static int classifica;
         Uri uriLanternaAccesa = new Uri("lampOn.png", UriKind.Relative);
         static ImageSource imgON;
 
@@ -36,6 +26,8 @@ namespace Es.Thread_WPF
             InitializeComponent();
             ImageSource img = new BitmapImage(uriAuto);
             imgON = new BitmapImage(uriLanternaAccesa);
+            posInitAuto = 35;
+            classifica = 0;
             imgCar.Source = img;
             Thread t1 = new Thread(new ThreadStart(CaricaLanterne));
             Thread t2 = new Thread(new ThreadStart(CaricaBar));
@@ -55,7 +47,7 @@ namespace Es.Thread_WPF
 
                 caricamento += 2;
 
-                if(caricamento >= 200)
+                if(caricamento == 200)
                 {
 
                     this.Dispatcher.BeginInvoke(new Action(() =>
@@ -64,7 +56,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                else if (caricamento >= 400)
+                else if (caricamento == 400)
                 {
 
                     this.Dispatcher.BeginInvoke(new Action(() =>
@@ -73,7 +65,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                else if (caricamento >= 600)
+                else if (caricamento == 600)
                 {
 
                     this.Dispatcher.BeginInvoke(new Action(() =>
@@ -82,7 +74,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                else if (caricamento >= 800)
+                else if (caricamento == 800)
                 {
 
                     this.Dispatcher.BeginInvoke(new Action(() =>
@@ -91,7 +83,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                else if (caricamento >= 1000)
+                else if (caricamento == 1000)
                 {
 
                     this.Dispatcher.BeginInvoke(new Action(() =>
@@ -100,7 +92,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                Thread.Sleep(TimeSpan.FromMilliseconds(50));
             }
 
             if(caricamento > 1000)
@@ -127,7 +119,7 @@ namespace Es.Thread_WPF
                 {
                     pbThread2.Value = statoCaricamento;
                 }));
-                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                Thread.Sleep(TimeSpan.FromMilliseconds(50));
             } while (statoCaricamento < 1000);
 
             if(statoCaricamento >= 1000)
@@ -144,7 +136,7 @@ namespace Es.Thread_WPF
             {
                 posInitAuto += 1.29;
 
-                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                Thread.Sleep(TimeSpan.FromMilliseconds(50));
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
@@ -166,18 +158,18 @@ namespace Es.Thread_WPF
             {
                 if (classifica == 0)
                 {
-                    MessageBox.Show("Il caricamento delle lanterne è arrivato 1°");
                     classifica++;
+                    MessageBox.Show("Il caricamento delle lanterne è arrivato 1°");
                 }
                 else if (classifica == 1)
                 {
-                    MessageBox.Show("Il caricamento delle lanterne è arrivato 2°");
                     classifica++;
+                    MessageBox.Show("Il caricamento delle lanterne è arrivato 2°");
                 }
                 else if(classifica == 2)
                 {
-                    MessageBox.Show("Il caricamento delle lanterne è arrivato 3°");
                     classifica++;
+                    MessageBox.Show("Il caricamento delle lanterne è arrivato 3°");
                 }
                     
             }
@@ -185,18 +177,18 @@ namespace Es.Thread_WPF
             {
                 if (classifica == 0)
                 {
-                    MessageBox.Show("Il caricamento della barra è arrivato 1°");
                     classifica++;
+                    MessageBox.Show("Il caricamento della barra è arrivato 1°");
                 }
                 else if (classifica == 1)
                 {
-                    MessageBox.Show("Il caricamento della barra è arrivato 2°");
                     classifica++;
+                    MessageBox.Show("Il caricamento della barra è arrivato 2°");
                 }
                 else if (classifica == 2)
                 {
-                    MessageBox.Show("Il caricamento della barra è arrivato 3°");
                     classifica++;
+                    MessageBox.Show("Il caricamento della barra è arrivato 3°");
                 }
 
             }
@@ -204,18 +196,18 @@ namespace Es.Thread_WPF
             {
                 if (classifica == 0)
                 {
-                    MessageBox.Show("Il caricamento dell' auto è arrivato 1°");
                     classifica++;
+                    MessageBox.Show("Il caricamento dell' auto è arrivato 1°");
                 }
                 else if (classifica == 1)
                 {
-                    MessageBox.Show("Il caricamento dell' auto è arrivato 2°");
                     classifica++;
+                    MessageBox.Show("Il caricamento dell' auto è arrivato 2°");
                 }
                 else if (classifica == 2)
                 {
-                    MessageBox.Show("Il caricamento dell' auto è arrivato 3°");
                     classifica++;
+                    MessageBox.Show("Il caricamento dell' auto è arrivato 3°");
                 }
 
             }
