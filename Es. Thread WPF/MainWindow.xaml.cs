@@ -28,19 +28,27 @@ namespace Es.Thread_WPF
         readonly Uri uriAuto = new Uri("car.png", UriKind.Relative);
         double posInitAuto = 35;
         int classifica = 0;
+        Uri uriLanternaAccesa = new Uri("lampOn.png", UriKind.Relative);
+        static ImageSource imgON;
+
         public MainWindow()
         {
             InitializeComponent();
             ImageSource img = new BitmapImage(uriAuto);
-            imgCar.Source = img;           
+            imgON = new BitmapImage(uriLanternaAccesa);
+            imgCar.Source = img;
+            Thread t1 = new Thread(new ThreadStart(CaricaLanterne));
+            Thread t2 = new Thread(new ThreadStart(CaricaBar));
+            Thread t3 = new Thread(new ThreadStart(CaricaCorsaAuto));
+            t1.Start();
+            t2.Start();
+            t3.Start();
         }
 
         public void CaricaLanterne()
         {
 
             int caricamento = 0;
-            Uri uriLanternaAccesa = new Uri("lampOn.png", UriKind.Relative);
-            ImageSource imgON = new BitmapImage(uriLanternaAccesa);
 
             while (caricamento <= 1000)
             {
@@ -50,34 +58,49 @@ namespace Es.Thread_WPF
                 if(caricamento >= 200)
                 {
 
-                    imgLamp1.Source = imgON;
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        imgLamp1.Source = imgON;
+                    }));
 
                 }
                 else if (caricamento >= 400)
                 {
 
-                    imgLamp2.Source = imgON;
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        imgLamp2.Source = imgON;
+                    }));
 
                 }
                 else if (caricamento >= 600)
                 {
 
-                    imgLamp3.Source = imgON;
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        imgLamp3.Source = imgON;
+                    }));
 
                 }
                 else if (caricamento >= 800)
                 {
 
-                    imgLamp4.Source = imgON;
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        imgLamp4.Source = imgON;
+                    }));
 
                 }
                 else if (caricamento >= 1000)
                 {
 
-                    imgLamp5.Source = imgON;
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        imgLamp5.Source = imgON;
+                    }));
 
                 }
-                Thread.Sleep(TimeSpan.FromMilliseconds(500));
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
             }
 
             if(caricamento > 1000)
@@ -90,17 +113,28 @@ namespace Es.Thread_WPF
         public void CaricaBar()
         {
 
-            while(pbThread2.Value < 1000)
+            double statoCaricamento = 0;
+            this.Dispatcher.BeginInvoke(new Action(() =>
             {
-                pbThread2.Value += 2;
-                Thread.Sleep(TimeSpan.FromMilliseconds(500));
-            }
-            
-            if(pbThread2.Value >= 1000)
+                statoCaricamento = pbThread2.Value;
+            }));
+
+            do
+            {
+
+                statoCaricamento += 2;
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    pbThread2.Value = statoCaricamento;
+                }));
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+            } while (statoCaricamento < 1000);
+
+            if(statoCaricamento >= 1000)
             {
                 DistinguiClassifica(1);
             }
-
+            
         }
 
         public void CaricaCorsaAuto()
@@ -108,9 +142,9 @@ namespace Es.Thread_WPF
 
             while (posInitAuto < 680)
             {
-                posInitAuto += 0.645;
+                posInitAuto += 1.29;
 
-                Thread.Sleep(TimeSpan.FromMilliseconds(500));
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
@@ -187,7 +221,5 @@ namespace Es.Thread_WPF
             }
 
         }
-
-
     }
 }
