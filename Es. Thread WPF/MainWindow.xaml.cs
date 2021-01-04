@@ -20,6 +20,7 @@ namespace Es.Thread_WPF
         static int classifica;
         Uri uriLanternaAccesa = new Uri("lampOn.png", UriKind.Relative);
         static ImageSource imgON;
+        Random r;
 
         public MainWindow()
         {
@@ -29,6 +30,7 @@ namespace Es.Thread_WPF
             posInitAuto = 35;
             classifica = 0;
             imgCar.Source = img;
+            r = new Random();
             Thread t1 = new Thread(new ThreadStart(CaricaLanterne));
             Thread t2 = new Thread(new ThreadStart(CaricaBar));
             Thread t3 = new Thread(new ThreadStart(CaricaCorsaAuto));
@@ -41,6 +43,7 @@ namespace Es.Thread_WPF
         {
 
             int caricamento = 0;
+            int sleepingTime = r.Next(30, 101);
 
             while (caricamento <= 1000)
             {
@@ -92,7 +95,7 @@ namespace Es.Thread_WPF
                     }));
 
                 }
-                Thread.Sleep(TimeSpan.FromMilliseconds(30));
+                Thread.Sleep(TimeSpan.FromMilliseconds(sleepingTime));
             }
 
             if(caricamento > 1000)
@@ -106,6 +109,7 @@ namespace Es.Thread_WPF
         {
 
             double statoCaricamento = 0;
+            int sleepingTime = r.Next(30, 101);
             this.Dispatcher.BeginInvoke(new Action(() =>
             {
                 statoCaricamento = pbThread2.Value;
@@ -119,7 +123,7 @@ namespace Es.Thread_WPF
                 {
                     pbThread2.Value = statoCaricamento;
                 }));
-                Thread.Sleep(TimeSpan.FromMilliseconds(30));
+                Thread.Sleep(TimeSpan.FromMilliseconds(sleepingTime));
             } while (statoCaricamento < 1000);
 
             if(statoCaricamento >= 1000)
@@ -131,12 +135,12 @@ namespace Es.Thread_WPF
 
         public void CaricaCorsaAuto()
         {
-
+            int sleepingTime = r.Next(30, 101);
             while (posInitAuto < 680)
             {
                 posInitAuto += 1.29;
 
-                Thread.Sleep(TimeSpan.FromMilliseconds(30));
+                Thread.Sleep(TimeSpan.FromMilliseconds(sleepingTime));
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
